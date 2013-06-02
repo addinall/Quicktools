@@ -10,17 +10,17 @@
 //  DATE:       29/04/2007
 //  SYNOPSIS:   The index file for the Quicktools suite
 //              This file has seen some major re-use over
-//              the years.  Apart from the quicktools suite,
-//              this file has been part of the Chameleon CMS
-//              and several specific applications.
+//              the years.
 //
 //------------+-------------------------------+------------
 // DATE       |    CHANGE                     |    WHO
 //------------+-------------------------------+------------
-// 29/04/2007 | Initial creation Telstra      |  MA
+// 29/04/2004 | Initial creation Telstra      |  MA
+// 07/02/2006 | iiNet implementation          |  MA
+// 14/11/2007 | OPTUS version. McQuarie       |  MA
 // 12/08/2009 | Complete re-write v2.x own use|  MA
 // 18/02/2010 | Re-write CITEC (unfinished)   |  MA
-// 12/02/2012 | Re-write v3.x new object model|  MA
+//            | Silly people.  Far too slow.  |
 // 04/03/2010 | Brand new development of a    |
 //            | Perl based AJAX server that   |
 //            | provide SNMP and MIBII request|
@@ -29,7 +29,8 @@
 //            | Quicktools used a Perl robot  |
 //            | and sucked data back from     |
 //            | stdout().  This is neater.    |  MA
-// 12/05/2012 | Revisit to enable the HTML5   |  MA
+// 12/02/2012 | Re-write v3.x new object model|  MA
+// 12/05/2013 | Revisit to enable the HTML5   |  MA
 //            | CSS3 Framework as the build   |
 //            | platform.                     |
 //------------+-------------------------------+------------
@@ -44,6 +45,11 @@
 //
 // As of version 3.x all of this function is encapsulated
 // into Objects.  About time.  Only took me seven years.
+//
+// Now we move it into version 4.0 of the framework.  Not
+// a LOT of change.  The Framework is now RESPONSIVE to cater
+// for telephones and fondle slabs that did not exist when
+// I wrote version 1.x of this system.
 //
 // it sets the DOCTYPE to whatever we deem suitable for this implementation.
 //
