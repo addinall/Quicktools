@@ -4,8 +4,8 @@
 // CAPTAIN  SLOG
 //---------------------------------------------------------
 //
-//	FILE:	    quicktools.php       
-//	SYSTEM:    	Network monitoring 
+//	FILE:		quicktools.php       
+//	SYSTEM:		Network monitoring 
 //	AUTHOR:     Mark Addinall
 //	DATE:       29/04/2007
 //	SYNOPSIS:   The index file for the Quicktools suite
