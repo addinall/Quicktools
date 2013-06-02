@@ -1,0 +1,184 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+# Copyright 2008 Andrew Sterling Hanenkamp.
+#
+# This is free software and may be modified or distributed under the same terms
+# as Perl itself.
+#
+
+use constant HOST => 'http://localhost/cgi-bin/library.cgi';
+
+# To use this program you need to first install the library.cgi server
+# somewhere that probably came with this program. 
+#
+# Check the HOST setting above and make sure it points to the location where
+# the library.cgi script can be contacted. Then, you should be able to run
+# things like:
+#
+#   ./book list
+#   ./book create local-book-file.yml
+#   ./book read 1-2345-6789-0
+#   ./book update 1-2345-6789-0 local-book-file.yml
+#   ./book delete 1-2345-6789-0
+#
+# Each book file is a YAML file that looks something like this:
+#
+# ---
+# isbn: 0-85151-760-9
+# title: Old Paths: Being Plain Statements on Some of the Weightier Matters of Christianity
+# author: John Charles Ryle, D.D.
+# publisher: The Banner of Truth Trust
+# city: Carlisle, Pennsylvania
+# year: 1878
+#
+# All the fields (even ISBN) are optional except for "title". 
+
+use HTTP::Request;
+use HTTP::Request::Common;
+use LWP::UserAgent;
+
+# A handy shortcut for building a quick-and-dirty command-line interface
+sub subcommand($$) {
+    my ($expected, $code) = @_;
+    if ($expected eq $ARGV[0]) {
+        shift @ARGV;
+        $code->();
+        exit;
+    }
+}
+
+# A shortcut for outputting errors form the REST server
+sub barf($) {
+    my $response = shift;
+
+    # A lame way to pull out the important info from the response
+    my ($title) = $response->content =~ m{<h1>([^<]+)</h1>};
+    my ($message) = $response->content =~ m{<p>([^<]+)</p>};
+
+    die "ERROR $title: $message\n";
+}
+
+# This is a helper to slurp up files, I could have just used File::Slurp
+sub slurp($) {
+    my $filename = shift;
+
+    # Slurp up the contents of the given filename
+    open my $slurpy, '<', $file or die "Cannot open $file: $!";
+    return do { local $/; <$slurpy> };
+}
+
+# All of our commands will share this user agent
+my $ua = LWP::UserAgent->new;
+
+# book list - lists all the books the server returns
+subcommand 'list' => sub {
+
+    # GET /=/model/book
+    my $response = $ua->request(GET HOST.'/=/model/book/id');
+
+    # On success, find the link and print them out
+    if ($response->is_success) {
+        my @links = $response->content =~ /\bhref="([^"]+)"/gm;
+        for my $url (@links) {
+            my ($id) = $url =~ /([\d-]+)$/;
+            print "$id: $url\n";
+        }
+    }
+
+    # On failure, barf
+    else {
+        barf $response;
+    }
+};
+
+# book read <id> - reads the book file for <id>
+subcommand 'read' => sub {
+    my $id = shift @ARGV;
+
+    # GET /=/model/book/id/[id]
+    my $response = $ua->request(GET HOST.'/=/model/book/id/'.$id);
+
+    # On success, print the file
+    if ($response->is_success) {
+        print $response->content;
+    }
+
+    # On failure, barf
+    else {
+        barf $response;
+    }
+};
+
+# book create <filename> - submits the book file in <filename> to the server
+subcommand 'create' => sub {
+    my $file = shift @ARGV;
+
+    # Slurp up the contents of the given filename
+    my $book_data = slurp $file;
+
+    # POST /=/model/book
+    my $response = $ua->request(POST HOST.'/=/model/book', 
+        'Content-Type' => 'text/yaml',
+        Content        => $book_data
+    );
+
+    # On success, return the new ID assigned to the resource
+    if ($response->is_success) {
+        my $url = $response->header('Location');
+        my ($id) = $url =~ /([\d-]+)$/;
+        print "$id: $url\n";
+    }
+
+    # On failure, barf
+    else {
+        barf $response;
+    }
+};
+
+# book update <id> <filename> - updates the book file <id> using <filename>
+subcommand 'update' => sub {
+    my $id   = shift @ARGV;
+    my $file = shift @ARGV;
+
+    # Slurp up the given file name
+    my $book_data = slurp $file;
+
+    # PUT /=/model/book/id/[id]
+    my $response = $ua->request(PUT HOST.'/=/model/book/id/'.$id, 
+        'Content-Type' => 'text/yaml',
+        Content        => $book_data,
+    );
+
+    # On success, just announce success
+    if ($response->is_success) {
+        print "Updated $id\n";
+    }
+
+    # On failure, barf
+    else {
+        barf $response;
+    }
+};
+
+# book delete <id> - deletes the book resource with ID <id>
+subcommand 'delete' => sub {
+    my $id = shift @ARGV;
+
+    # DELETE /=/model/book/id/[id]
+    my $response = $ua->request(
+        HTTP::Request->new( DELETE => HOST.'/=/model/book/id/'.$id )
+    );
+
+    # On success, announce it
+    if ($response->is_success) {
+        print "Deleted $id\n";
+    }
+
+    # On failure, barf
+    else {
+        barf $response;
+    }
+};
+

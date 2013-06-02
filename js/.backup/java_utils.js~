@@ -1,0 +1,53 @@
+//---------------------------------------------------------
+// CAPTAIN  SLOG
+//---------------------------------------------------------
+//
+//	FILE:		java_utils.js
+//	SYSTEM:		KOOKIVOO generic CMS
+//	AUTHOR:		Isis St Pierre, Mark Addinall
+//	DATE:           9th Apr 2008
+//	SYNOPSIS:	Bits and peices of Javascript
+//
+//------------+-------------------------------+------------
+// DATE       |    CHANGE                     |    WHO
+//------------+-------------------------------+------------
+//09/04/2008  |Initial creation               |    MA
+//------------+-------------------------------+------------
+//
+//
+
+
+
+
+
+
+
+//------------------
+function clearForms()
+{
+  var i;
+  for (i = 0; (i < document.forms.length); i++)
+  {
+    document.forms[i].reset();
+  }
+}
+
+
+//--------------------
+function refresh()
+{
+//	window.location.reload(true) ;
+}
+
+
+//--------------------
+function start_this()
+{
+//    if( history.previous != history.current )
+//	{
+//		window.location.reload(true);
+
+//	window.location.href = window.location.href; 
+
+}
+

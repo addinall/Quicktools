@@ -1,0 +1,184 @@
+function create_links( $parent, $name )
+{
+
+global	$location_checkbox,
+		$holiday_checkbox,
+		$when_checkbox,	
+		$guide_checkbox,
+		$yacht_checkbox,
+		$jet_checkbox,
+		$interest_checkbox,
+		$flora_checkbox,	
+		$event_checkbox,
+		$traveller_checkbox,
+		$staff_checkbox,	
+		$property_checkbox ;
+
+		$size = count( $location_checkbox ) ;
+		if ($size)
+		{
+			for(	$count = 0 ;
+					$count < $size ;
+					$count++ )
+			{
+				$linker->add(	"location",
+								"$parent",
+								"$name",
+								"{$location_checkbox[ $count ]}",
+								date( 'Y-m-d' ) ) ;
+			}
+		}
+
+		$size = count( $holiday_checkbox ) ;
+		if ($size)
+		{
+			for(	$count = 0 ;
+					$count < $size ;
+					$count++ )
+			{
+				$linker->add(	"holiday",
+								"$parent",
+								"$name",
+								"{$holiday_checkbox[ $count ]}",
+								date( 'Y-m-d' ) ) ;
+			}
+		}
+
+		$size = count( $when_checkbox ) ;
+		if ($size)
+		{
+			for(	$count = 0 ;
+					$count < $size ;
+					$count++ )
+			{
+				$linker->add(	"when",
+								"$parent",
+								"$name",
+								"{$when_checkbox[ $count ]}",
+								date( 'Y-m-d' ) ) ;
+			}
+		}
+
+		$size = count( $guide_checkbox ) ;
+		if ($size)
+		{
+			for(	$count = 0 ;
+					$count < $size ;
+					$count++ )
+			{
+				$linker->add(	"guide",
+								"$parent",
+								"$name",
+								"{$guide_checkbox[ $count ]}",
+								date( 'Y-m-d' ) ) ;
+			}
+		}
+
+		$size = count( $yacht_checkbox ) ;
+		if ($size)
+		{
+			for(	$count = 0 ;
+					$count < $size ;
+					$count++ )
+			{
+				$linker->add(	"yacht",
+								"$parent",
+								"$name",
+								"{$yacht_checkbox[ $count ]}",
+								date( 'Y-m-d' ) ) ;
+			}
+		}
+
+		$size = count( $jet_checkbox ) ;
+		if ($size)
+		{
+			for(	$count = 0 ;
+					$count < $size ;
+					$count++ )
+			{
+				$linker->add(	"jet",
+								"$parent",
+								"$name",
+								"{$jet_checkbox[ $count ]}",
+								date( 'Y-m-d' ) ) ;
+			}
+		}
+
+		$size = count( $interest_checkbox ) ;
+		if ($size)
+		{
+			for(	$count = 0 ;
+					$count < $size ;
+					$count++ )
+			{
+				$linker->add(	"interest",
+								"$parent",
+								"$name",
+								"{$interest_checkbox[ $count ]}",
+								date( 'Y-m-d' ) ) ;
+			}
+		}
+
+		$size = count( $flora_checkbox ) ;
+		if ($size)
+		{
+			for(	$count = 0 ;
+					$count < $size ;
+					$count++ )
+			{
+				$linker->add(	"florafauna",
+								"$parent",
+								"$name",
+								"{$flora_checkbox[ $count ]}",
+								date( 'Y-m-d' ) ) ;
+			}
+		}
+
+		$size = count( $event_checkbox ) ;
+		if ($size)
+		{
+			for(	$count = 0 ;
+					$count < $size ;
+					$count++ )
+			{
+				$linker->add(	"event",
+								"$parent",
+								"$name",
+								"{$event_checkbox[ $count ]}",
+								date( 'Y-m-d' ) ) ;
+			}
+		}
+
+		$size = count( $traveller_checkbox ) ;
+		if ($size)
+		{
+			for(	$count = 0 ;
+					$count < $size ;
+					$count++ )
+			{
+				$linker->add(	"traveller",
+								"$parent",
+								"$name",
+								"{$traveller_checkbox[ $count ]}",
+								date( 'Y-m-d' ) ) ;
+			}
+		}
+
+		$size = count( $staff_checkbox ) ;
+		if ($size)
+		{
+			for(	$count = 0 ;
+					$count < $size ;
+					$count++ )
+			{
+				$linker->add(	"staff",
+								"$parent",
+								"$name",
+								"{$staff_checkbox[ $count ]}",
+								date( 'Y-m-d' ) ) ;
+			}
+		}
+	}	
+}
+
+
