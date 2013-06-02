@@ -1,10 +1,6 @@
-This is unfinished work in progress of my long suffering toolset. I decided that I had no RESPONSIVE CSS in my armory, so I wanted to implement that. I have also been playing with HTML5 and CSS3 so I wanted to incorporate that into my new applications. So I decided to re-write all of my toolset up to v4.0.
+QuickTools forms a suite of software that monitors a network.  It was primarily designed to monitor managed switches and routers on a network, but can easily monitor any other device.  The suite of software is aimed at the staff that inhabit a NOC.  The applications provides error reporting about a device in a manner that is easier to follow than (the excellent) HP-Openview.  When a NOC has 200-300 staff, training each member to be a proficient HP-Openview operator is a very large task, and quite possible overkil.  Quicktools will flag a faulty switch or router (or computer) on a network and stick a big red cross next to it.  More information can be had from the managed MIB by drilling down on a device.  The NOC staff can then quickly formulate an accurate and timely engineering report to task one of the CISCO geeks to action.  This saves time and money by removing duplication of investigation and provides a better customer turn around time when addressing faults found on managed devices.  If you are going to change any of the code, start a new branch will ya?
 
-When finished (soon I hope) it will provide a Framework for RAD and AGILE Web development, and provide a Content Management system in the guise of Chameleon 4.0 as part of the suite.
 
-I don't need collaborators, not until I say "There, those are done for this version" at least!
-
-This code is published under a BSD licence, but I would ask that you not copy it until I say it has passed my tests for completion. It is a work in progress, so it is not viable for use just yet. When it is finished, go for it.
 
 Thank you.
 Mark Addinall
