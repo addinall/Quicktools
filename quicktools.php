@@ -1,18 +1,18 @@
 <?php
-// vim: set tabstop=4 shiftwidth=4 autoindent smartindent:
+// vim: set expandtab tabstop=4 shiftwidth=4 autoindent smartindent:
 //---------------------------------------------------------
 // CAPTAIN  SLOG
 //---------------------------------------------------------
 //
-//	FILE:		quicktools.php       
-//	SYSTEM:		Network monitoring 
-//	AUTHOR:		Mark Addinall
-//	DATE:		29/04/2007
-//	SYNOPSIS:	The index file for the Quicktools suite
-//				This file has seen some major re-use over
-//				the years.  Apart from the quicktools suite,
-//				this file has been part of the Chameleon CMS
-//				and several specific applications.
+//  FILE:       quicktools.php       
+//  SYSTEM:     Network monitoring 
+//  AUTHOR:     Mark Addinall
+//  DATE:       29/04/2007
+//  SYNOPSIS:   The index file for the Quicktools suite
+//              This file has seen some major re-use over
+//              the years.  Apart from the quicktools suite,
+//              this file has been part of the Chameleon CMS
+//              and several specific applications.
 //
 //------------+-------------------------------+------------
 // DATE       |    CHANGE                     |    WHO
@@ -69,39 +69,39 @@ require_once('q2_objects.php');
 // kids.
 
 $page = <<< EOP
-	<div id="page">
-		<div id="page-bgtop">
-			<div id="page-bgbtm">
-				<div id="content">
-					<div class="post">
-						<div class="post-bgtop">
-							<div class="post-bgbtm">
-								<h1 class="title">$head1</h1>
-									<h3 class="title">$head2</h3>
-								<div class="entry">
-								$cms1 
-							</div>
-						</div>
-					</div>
-				</div>
-			<div class="post">
-				<div class="post-bgtop">
-					<div class="post-bgbtm">
-						<h1 class="title">$head3</h1>
-						<div class="entry">
-							$cms2
-						</div>
-						<h3 class="title">$head4</h3>
-						<div class="entry">
-							$cms3
-						</div>
-					</div>
-				</div>
-			</div>
-				<div style="clear: both;">&nbsp;
-				</div>
-		</div>
-		<!-- end content -->
+    <div id="page">
+        <div id="page-bgtop">
+            <div id="page-bgbtm">
+                <div id="content">
+                    <div class="post">
+                        <div class="post-bgtop">
+                            <div class="post-bgbtm">
+                                <h1 class="title">$head1</h1>
+                                    <h3 class="title">$head2</h3>
+                                <div class="entry">
+                                $cms1 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="post">
+                <div class="post-bgtop">
+                    <div class="post-bgbtm">
+                        <h1 class="title">$head3</h1>
+                        <div class="entry">
+                            $cms2
+                        </div>
+                        <h3 class="title">$head4</h3>
+                        <div class="entry">
+                            $cms3
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div style="clear: both;">&nbsp;
+                </div>
+        </div>
+        <!-- end content -->
 EOP;
 
 // isn't that just lovely to look at?; OK, process the page
