@@ -6,13 +6,13 @@
 //
 //	FILE:		quicktools.php       
 //	SYSTEM:		Network monitoring 
-//	AUTHOR:     Mark Addinall
-//	DATE:       29/04/2007
-//	SYNOPSIS:   The index file for the Quicktools suite
-//              This file has seen some major re-use over
-//              the years.  Apart from the quicktools suite,
-//              this file has been part of the Chameleon CMS
-//              and several specific applications.
+//	AUTHOR:		Mark Addinall
+//	DATE:		29/04/2007
+//	SYNOPSIS:	The index file for the Quicktools suite
+//				This file has seen some major re-use over
+//				the years.  Apart from the quicktools suite,
+//				this file has been part of the Chameleon CMS
+//				and several specific applications.
 //
 //------------+-------------------------------+------------
 // DATE       |    CHANGE                     |    WHO
