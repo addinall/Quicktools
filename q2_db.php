@@ -4,11 +4,11 @@
 // CAPTAIN  SLOG
 //---------------------------------------------------------
 //
-//	FILE:       q2_db.php
-//	SYSTEM:    	quicktools version 2 
-//	AUTHOR:     Mark Addinall
-//	DATE:       27/04/2010
-//	SYNOPSIS:   Fire up a database
+//  FILE:       q2_db.php
+//  SYSTEM:     quicktools version 2 
+//  AUTHOR:     Mark Addinall
+//  DATE:       27/04/2010
+//  SYNOPSIS:   Fire up a database
 //
 //------------+-------------------------------+------------
 // DATE       |    CHANGE                     |    WHO

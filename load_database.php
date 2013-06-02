@@ -1,17 +1,18 @@
 <?php
+// vim: set expandtab tabstop=4 shiftwidth=4 autoindent smartindent:
 //---------------------------------------------------------
 // CAPTAIN  SLOG
 //---------------------------------------------------------
 //
-//	FILE:		load_database.php
-//	SYSTEM:		Network monitoring	
-//	AUTHOR:		Mark Addinall
-//	DATE:		20 Mar 2010
-//	SYNOPSIS:   Loads the database into memory for the
-//	            'add' functions.  As everything is linked
-//	            to everthing else, storing the small database
-//	            in memory should be OK.  This may be used
-//	            in the edit routines and in the front end 
+//  FILE:       load_database.php
+//  SYSTEM:     Network monitoring  
+//  AUTHOR:     Mark Addinall
+//  DATE:       20 Mar 2010
+//  SYNOPSIS:   Loads the database into memory for the
+//              'add' functions.  As everything is linked
+//              to everthing else, storing the small database
+//              in memory should be OK.  This may be used
+//              in the edit routines and in the front end 
 //              later on.
 //
 //------------+-------------------------------+------------
@@ -36,22 +37,22 @@ require('get_customers.php') ;
 
 //--------------main -----------------------
 
-	// open a pipe
+    // open a pipe
 
 
 
-	$database = New Connection( $configuration ) ;
+    $database = New Connection( $configuration ) ;
 
 
-	// that was pretty heh?  :-)
+    // that was pretty heh?  :-)
 
 
-	// SUCK!
+    // SUCK!
 
-	get_machines() ;
-	get_customers() ;
+    get_machines() ;
+    get_customers() ;
 
-	$database->close() ;
+    $database->close() ;
 
 
 ?>

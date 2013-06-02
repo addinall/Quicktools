@@ -1,29 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
 <?php
 // vim: set expandtab tabstop=4 shiftwidth=4 autoindent smartindent:
 //---------------------------------------------------------
 // CAPTAIN  SLOG
 //---------------------------------------------------------
 //
-//	FILE:	    q2_header.php
-//	SYSTEM:     Quicktools 2 
-//	AUTHOR:     Network monitoring 
-//	DATE:       21/10/2010
-//	SYNOPSIS:   This file is included in any part of the application that
-//	            requires a visual output.  I fires up the database by
-//	            default as every application that displays uses
-//	            SOMETHING from the database.  I could have built
-//	            more granularity into the load, but for the sake
-//	            of keeping the applications (and the template)
-//	            simple, it sucks most of it in here.  The CMS uses
-//	            exactly the same file (and routine) as does the
-//	            front side web pages.  Cuts down on code complexity.
-//	            As an aside, I had another go at MVC models this week.
-//	            This time I tried Cake and RoR.  I don't understand
-//	            how they can be considered RAPID, structured or
-//	            Object Oriented.  They are still a mess, so back
-//	            to my libraries.
+//  FILE:       q2_header.php
+//  SYSTEM:     Quicktools 2 
+//  AUTHOR:     Network monitoring 
+//  DATE:       21/10/2010
+//  SYNOPSIS:   This file is included in any part of the application that
+//              requires a visual output.  I fires up the database by
+//              default as every application that displays uses
+//              SOMETHING from the database.  I could have built
+//              more granularity into the load, but for the sake
+//              of keeping the applications (and the template)
+//              simple, it sucks most of it in here.  The CMS uses
+//              exactly the same file (and routine) as does the
+//              front side web pages.  Cuts down on code complexity.
+//              As an aside, I had another go at MVC models this week.
+//              This time I tried Cake and RoR.  I don't understand
+//              how they can be considered RAPID, structured or
+//              Object Oriented.  They are still a mess, so back
+//              to my libraries.
 //
 //------------+-------------------------------+------------
 // DATE       |    CHANGE                     |    WHO

@@ -4,11 +4,11 @@
 // CAPTAIN  SLOG
 //---------------------------------------------------------
 //
-//	FILE:	    q2_nimple.php       
-//	SYSTEM:     Network monitoring 
-//	AUTHOR:     Mark Addinall
-//	DATE:       29/10/2010
-//	SYNOPSIS:
+//  FILE:       q2_nimple.php       
+//  SYSTEM:     Network monitoring 
+//  AUTHOR:     Mark Addinall
+//  DATE:       29/10/2010
+//  SYNOPSIS:
 //
 //------------+-------------------------------+------------
 // DATE       |    CHANGE                     |    WHO
@@ -48,23 +48,23 @@ require_once('q2_cms.php');
 
 
 $page = <<< EOP
-	<div id="page">
-		<div id="page-bgtop">
-			<div id="page-bgbtm">
-				<div id="content">
-					<div class="post">
-						<div class="post-bgtop">
-							<div class="post-bgbtm">
-								<h1 class="title">$head5</h1>
-								<div class="entry">
-									$nimple 
-								</div>
-							</div>
-						</div>
-					<div style="clear: both;">&nbsp;</div>
-				</div>
-			</div>
-		<!-- end content -->
+    <div id="page">
+        <div id="page-bgtop">
+            <div id="page-bgbtm">
+                <div id="content">
+                    <div class="post">
+                        <div class="post-bgtop">
+                            <div class="post-bgbtm">
+                                <h1 class="title">$head5</h1>
+                                <div class="entry">
+                                    $nimple 
+                                </div>
+                            </div>
+                        </div>
+                    <div style="clear: both;">&nbsp;</div>
+                </div>
+            </div>
+        <!-- end content -->
 EOP;
 
 print $page ;

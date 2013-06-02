@@ -1,15 +1,14 @@
 <?php
-//
 // vim: set expandtab tabstop=4 shiftwidth=4 autoindent smartindent:
 //---------------------------------------------------------
 // CAPTAIN  SLOG
 //---------------------------------------------------------
 //
-//	FILE:       q2_customer_list
-//	SYSTEM:     Network monitoring	
-//	AUTHOR:     Mark Addinall
-//	DATE:       29/10/2010
-//	SYNOPSIS:   The customers page - Create/edit/delete
+//  FILE:       q2_customer_list
+//  SYSTEM:     Network monitoring  
+//  AUTHOR:     Mark Addinall
+//  DATE:       29/10/2010
+//  SYNOPSIS:   The customers page - Create/edit/delete
 //
 //------------+-------------------------------+------------
 // DATE       |    CHANGE                     |    WHO
@@ -20,12 +19,12 @@
 //
 
 
-require_once('q2_header.php');				// DOCTYPE, <HEAD></HEAD>, menu etc.
-require_once('q2_config.php') ;				// our environment information
-require_once('q2_objects.php') ;			// application objects
-require_once('q2_db.php') ;					// base level database connect
-require_once('get_customers.php') ;			// re-load customers
-require_once('q2_cms.php');					// presentation data
+require_once('q2_header.php');              // DOCTYPE, <HEAD></HEAD>, menu etc.
+require_once('q2_config.php') ;             // our environment information
+require_once('q2_objects.php') ;            // application objects
+require_once('q2_db.php') ;                 // base level database connect
+require_once('get_customers.php') ;         // re-load customers
+require_once('q2_cms.php');                 // presentation data
 
 
 //-------------------------
@@ -37,13 +36,13 @@ function list_customers() {
 // of list for processing.
 
     // get access to a global stack of customers 
-	// loaded by get_customers
+    // loaded by get_customers
 
     global $customers;
 
 
-	// set the XHTML to empty
-	$customer_list = '' ;
+    // set the XHTML to empty
+    $customer_list = '' ;
 
     // dope the number of stack items
     $size = count( $customers ) ;
@@ -64,12 +63,12 @@ function list_customers() {
         // as the normal lists
         
         if ( $counter == ( $size - 1 ) ) {   
-        	$class = ( $counter & 1 ) ? 'oddlastfield' : 'lastfield' ;
+            $class = ( $counter & 1 ) ? 'oddlastfield' : 'lastfield' ;
         }
 
         // output the require css
 
-        $customer_list = $customer_list . "	<div class=$class> <div class=listtext>" ;
+        $customer_list = $customer_list . " <div class=$class> <div class=listtext>" ;
 
         // and the customer name
 
@@ -80,27 +79,27 @@ function list_customers() {
         // to act upon the chosen object
 
         $rest_of_list =<<<EOT
-			<div class="iconsright">
+            <div class="iconsright">
                 <a href="qt_machines_list.php?mode=PARTIAL&short_name={$customers[$counter]->short_name}">
                 <img src="images/admin_icon_review.png" title="Managed Machines"/></a>
                 <a href="qt_networks_list.php?mode=PARTIAL&short_name={$customers[$counter]->short_name}">
                 <img src="images/admin_icon_review.png" title="Managed Networks"/></a>
                 <a href="admin_customer_edit.php?short_name={$customers[ $counter ]->short_name}&mode=EDIT">
                 <img src="images/admin_icon_edit.png" title="edit" /></a>
-				<a onclick="return confirm('Are you sure you wish to DELETE this item?')"
-					href="admin_db_customer.php?short_name={$customers[ $counter ]->short_name}&mode=DELETE">
-				<img src="images/admin_icon_delete.png" title="delete" /></a>			
-			</div>
+                <a onclick="return confirm('Are you sure you wish to DELETE this item?')"
+                    href="admin_db_customer.php?short_name={$customers[ $counter ]->short_name}&mode=DELETE">
+                <img src="images/admin_icon_delete.png" title="delete" /></a>           
+            </div>
 EOT;
 
         $customer_list = $customer_list . $rest_of_list;
     } // for
 
-	if ($customer_list == '') {
-		$customer_list = '<h2 class="title">No entries in Database</h2>';
-	}
+    if ($customer_list == '') {
+        $customer_list = '<h2 class="title">No entries in Database</h2>';
+    }
 
-	return $customer_list;
+    return $customer_list;
 
 } // list customers 
 
@@ -114,7 +113,7 @@ EOT;
 // array
 
 $database = New Connection($configuration) 
-	or die( "Database connection failure    :" . mysql_error()) ;
+    or die( "Database connection failure    :" . mysql_error()) ;
 
 // load the customers stack
 
@@ -129,26 +128,26 @@ $database->close() ;
 $customer_list = list_customers();
 
 $page = <<< EOP
-	<div id="page">
-	<div id="page-bgtop">
-	<div id="page-bgbtm">
-		<div id="content">
-			<div class="post">
-				<div class="post-bgtop">
-					<div class="post-bgbtm">
-						<h1 class="title">$customer_list_title</h1>
-						<div class="entry">
-							$customer_button_form 
-						</div>
-						<div class="entry">
-							$customer_list
-						</div>
-					</div>
-				</div>
-			</div>
-			<div style="clear: both;">&nbsp;</div>
-		</div>
-		<!-- end content -->
+    <div id="page">
+    <div id="page-bgtop">
+    <div id="page-bgbtm">
+        <div id="content">
+            <div class="post">
+                <div class="post-bgtop">
+                    <div class="post-bgbtm">
+                        <h1 class="title">$customer_list_title</h1>
+                        <div class="entry">
+                            $customer_button_form 
+                        </div>
+                        <div class="entry">
+                            $customer_list
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both;">&nbsp;</div>
+        </div>
+        <!-- end content -->
 EOP;
 
 print $page ;

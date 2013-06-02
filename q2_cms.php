@@ -4,11 +4,11 @@
 // CAPTAIN  SLOG
 //---------------------------------------------------------
 //
-//	FILE:	    q2_cms.php       
-//	SYSTEM:     Network monitoring 
-//	AUTHOR:     Mark Addinall
-//	DATE:       29/10/2010
-//	SYNOPSIS:
+//  FILE:       q2_cms.php       
+//  SYSTEM:     Network monitoring 
+//  AUTHOR:     Mark Addinall
+//  DATE:       29/10/2010
+//  SYNOPSIS:
 //
 //------------+-------------------------------+------------
 // DATE       |    CHANGE                     |    WHO
@@ -133,12 +133,12 @@ $customer_input_form = '
 
 $customer_button_form =<<< EOF
 <p>
-	<form name="addnew" action="q2_customers_edit.php?mode='ADD'" method="POST">
-		<div align="right">
-			<h3 class="title">Add a New entry</h3>
-			<input type="image" src="images/blue.png" name="Add" width="40" height="40">
-		</div>
-	</form>
+    <form name="addnew" action="q2_customers_edit.php?mode='ADD'" method="POST">
+        <div align="right">
+            <h3 class="title">Add a New entry</h3>
+            <input type="image" src="images/blue.png" name="Add" width="40" height="40">
+        </div>
+    </form>
 </p>
 EOF;
 
