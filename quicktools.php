@@ -29,6 +29,9 @@
 //            | Quicktools used a Perl robot  |
 //            | and sucked data back from     |
 //            | stdout().  This is neater.    |  MA
+// 12/05/2012 | Revisit to enable the HTML5   |  MA
+//            | CSS3 Framework as the build   |
+//            | platform.                     |
 //------------+-------------------------------+------------
 //
 //
@@ -60,13 +63,16 @@ require_once('q2_objects.php');
 // the returns from SNMP traps.  Cute hey?
 
 // NOW, it is important NOT to put visual directives
-// into ANY of the PHP/XHTML.  To follow the Zen Garden
+// into ANY of the PHP/HTML.  To follow the Zen Garden
 // development philosophy, ALL visual control goes into
-// the CSS control.  I can't FORCE you to do this, but
-// please, please do.....
+// the CSS descriptions.  I can't FORCE you to do this, but
+// please, please do.....   This program has been reworked
+// for siz years using the above philosophy.  It
+// works well.  Rather than the Frameworks that were
+// around when this thing started, Smarty et al., ignoring
+// coding silly %TEMPLATES% and having all of the visuals
+// described by CSS has been the clever way to go.
 //
-// As of V 3.x I CAN force you to play well with other
-// kids.
 
 $page = <<< EOP
     <div id="page">
@@ -98,13 +104,13 @@ $page = <<< EOP
                     </div>
                 </div>
             </div>
-                <div style="clear: both;">&nbsp;
-                </div>
+            <div style="clear: both;">&nbsp;
+            </div>
         </div>
         <!-- end content -->
 EOP;
 
-// isn't that just lovely to look at?; OK, process the page
+// OK, process the page
 
 print $page ;
 
