@@ -3,7 +3,8 @@ QuickTools forms a suite of software that monitors a network.  It was primarily 
 
 
 Thank you.
+`
 Mark Addinall
+
 addinall@addinall.net
-http://addinall.github.io/HTML5-Toolset/
 
