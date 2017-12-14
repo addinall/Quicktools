@@ -7,7 +7,7 @@
 //  FILE:       qt_objects.php
 //  SYSTEM:     Network monitoring  
 //  AUTHOR:     Mark Addinall
-//  DATE:       29/10/2007
+//  DATE:       29/10/2004
 //  SYNOPSIS:   The Object definitions for the
 //              classes used within the CMS/quicktools
 //              system both for data storage
@@ -34,8 +34,7 @@
 //------------+-------------------------------+------------
 // DATE       |    CHANGE                     |    WHO
 //------------+-------------------------------+------------
-// 29/04/2007 | Initial creation Telstra      |  MA
-// 12/08/2009 | Complete re-write v2.x own use|  MA
+// 29/04/2004 | Initial creation Telstra      |  MA
 // 18/02/2010 | Re-write CITEC (unfinished)   |  MA
 // 12/02/2012 | Re-write v3.x new object model|  MA
 //------------+-------------------------------+------------

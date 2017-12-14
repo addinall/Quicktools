@@ -7,7 +7,7 @@
 //  FILE:       quicktools.php       
 //  SYSTEM:     Network monitoring 
 //  AUTHOR:     Mark Addinall
-//  DATE:       29/04/2007
+//  DATE:       29/04/2004
 //  SYNOPSIS:   The index file for the Quicktools suite
 //              This file has seen some major re-use over
 //              the years.
@@ -29,7 +29,6 @@
 //            | Quicktools used a Perl robot  |
 //            | and sucked data back from     |
 //            | stdout().  This is neater.    |  MA
-// 12/02/2012 | Re-write v3.x new object model|  MA
 // 12/05/2013 | Revisit to enable the HTML5   |  MA
 //            | CSS3 Framework as the build   |
 //            | platform.                     |
